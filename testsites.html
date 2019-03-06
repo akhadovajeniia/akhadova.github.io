@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Akhadova</title>
+</head>
+<body>
+
+<form name="test">
+
+
+	<p>Лучший друг человека - </p>
+	<input type="text" name="vopr1" value="" >
+		<p>Терьер, лайка, ретривер, это все - </p>
+		<input type="text" name="vopr2" value="" ><p>
+
+     <p>Собака должна:</p>
+     <input type="radio" name="vopr3">находиться дома<br>
+     <input type="radio" name="vopr3">гулять минимум 2 час в день<br>
+     <p>Собаку нужно:</p>
+     <input type="radio" name="vopr4">любить<br>
+     <input type="radio" name="vopr4">не кормить<br>
+
+
+     <p>Выберете положительные качества хозяина</p>
+     <input type="checkbox" name="vopr5">Эгоистичен<br>
+     <input type="checkbox" name="vopr5">Любящий<br>
+     <input type="checkbox" name="vopr5">Заботливый<br>
+     <p>Выберете вещи, необходимы для собаки</p>
+     <input type="checkbox" name="vopr6">Злой хозяин<br>
+     <input type="checkbox" name="vopr6">Спальное место<br>
+     <input type="checkbox" name="vopr6">Поводок<br>
+
+    <p>Место прогулки</p>
+     <select name="vopr7"> <option value="1">Вдоль дороги
+                              <option value="2">Детская площадка
+                              	<option value="3">Парк для собак
+      </select><p>
+            <p>Что Вы будете делать в случае плохого самочувствия у собаки</p>
+            <select name="vopr8"> <option value="1">Пущу на самотек
+                                     <option value="2">Отвезу к ветеренару                         
+             </select><p>
+                   
+</form>
+<input type="button" onclick="check()" value="Проверить">  
+<p id="resalt"></p>
+
+
+<script type="text/javascript" >
+
+    function check() {
+    var i=0;
+ if(document.test.vopr1.value=="собака") ++i;
+ if(document.test.vopr2.value=="породы") ++i;
+    
+    if(document.test.vopr3[1].checked) ++i;
+    if(document.test.vopr4[0].checked) ++i;
+    
+    if(!document.test.vopr5[0].checked && document.test.vopr5[1].checked && document.test.vopr5[2].checked) ++i;
+    if(!document.test.vopr6[0].checked && document.test.vopr6[1].checked && document.test.vopr6[2].checked) ++i;
+    
+    if(document.test.vopr7.value==3) ++i;
+   if(document.test.vopr8.value==2) ++i;
+   document.getElementById('resalt').innerHTML = "Задание выполнено на - "+ i;
+    }
+    </script>
+</body>
+</html>
